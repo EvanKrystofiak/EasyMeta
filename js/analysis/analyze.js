@@ -169,7 +169,10 @@
     const g = (ds.geometry = {});
     if (M.isNum(p.x) && M.isNum(d.x)) g.fovX = p.x * d.x;
     if (M.isNum(p.y || p.x) && M.isNum(d.y)) g.fovY = (p.y || p.x) * d.y;
-    if (M.isNum(p.z) && d.z > 1) g.depth = p.z * d.z;
+    // Z is a physical depth only where the sections are slices of one volume: not for the tilts
+    // of a tilt series, the frames of a movie, the images of a particle stack or montage pieces
+    const slices = !['tiltseries', 'movie', 'particles', 'montage', 'gain'].includes(ds.kind);
+    if (M.isNum(p.z) && d.z > 1 && slices) g.depth = p.z * d.z;
     if (ds.kind === 'tomogram' || ds.kind === 'map') {
       const v = (ds.volume = ds.volume || {});
       const pz = M.isNum(p.z) ? p.z : p.x;

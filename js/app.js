@@ -196,6 +196,7 @@
       if (!ds) return;
       ds.modalityOverride = m;
       ds.modality = m;
+      if (ds._kindFor && ds._kindFor[m]) ds.kind = ds._kindFor[m];
       if (m === 'LM') M.ensureLM(ds); else M.ensureEM(ds);
       M.analyze(ds);
       this.pages = M.pages.list(ds);

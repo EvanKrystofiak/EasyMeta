@@ -86,8 +86,9 @@ gets an image picker.
 **ImageJ TIFF and plain TIFF.** The ImageJ description (channels, slices,
 frames, spacing, unit) or the TIFF resolution tags. These files rarely say
 what microscope made them, so EasyMeta guesses light or electron microscopy
-from words in the ImageJ info block and the file name. When it finds no clue
-it shows a switch on the Overview page.
+from words in the ImageJ info block and the file name. Because that is only a
+guess, the Overview page shows a switch for these files, and you can change
+it.
 
 ## Electron microscopy
 
@@ -201,29 +202,37 @@ order and stops at the first that fits:
    `gain`, `countref`, `superref` or `norm`.
 4. Thermo's dose-fraction flag is set, or the name contains `fraction`,
    `frames`, `movie` or `_fr` → **movie**.
-5. The extension is `.st`, `.ali` or `.preali`, or the name contains `ts`,
-   `tilt` or `tiltseries` as a separate word → **tilt series**.
-6. The extension is `.rec`, or a label mentions a reconstruction or
-   tomogram-processing program (IMOD `tilt`, AreTomo, Warp, IsoNet, cryoCARE,
-   `trimvol`, `clip rotx`), or the name contains `_rec`, `_tomo`,
-   `_tomogram`, `_full_rec`, `_sirt` or `_wbp` → **tomogram**. A cube of
-   1024 voxels or less per side is called a **3D map** instead.
-7. The extension is `.map`, or the space group is 1 and the volume is a cube →
+5. The extension is `.st`, `.ali` or `.preali` → **tilt series**.
+6. The file says it is a reconstruction → **tomogram**. It says so by any of:
+   - the extension `.rec`;
+   - a label that mentions a reconstruction or tomogram-processing program
+     (IMOD `tilt`, AreTomo, Warp, IsoNet, cryoCARE, `trimvol`, `clip rotx`);
+   - `rec`, `recon`, `reconstruction`, `tomogram`, `sirt`, `wbp` or `vol` as a
+     separate word of the name, as in `TS_01_rec.mrc` or `TS_01_Vol.mrc`;
+   - a Warp-style pixel size in the name, as in `TS_01_10.00Apx.mrc`.
+
+   A cube of 1024 voxels or less per side is called a **3D map** instead.
+7. The name contains `ts`, `tilt` or `tiltseries` as a separate word →
+   **tilt series**.
+8. The name starts with `rec` or `tomo`, or contains `_rec` or `_tomo` →
+   **tomogram** (or **3D map**, as in rule 6).
+9. The extension is `.map`, or the space group is 1 and the volume is a cube →
    **3D map**.
-8. The extension is `.mrcs`, or the images are square, at most 1024 pixels and
-   there are more than 20 → **particle stack**.
-9. The space group is 1 or 401 → **tomogram** if one dimension is much thinner
-   than the others, otherwise **3D map**.
-10. At most 200 sections of at least 2048 pixels → **movie**.
-11. Anything else → **image stack**.
+10. The extension is `.mrcs`, or the images are square, at most 1024 pixels
+    and there are more than 20 → **particle stack**.
+11. The space group is 1 or 401 → **tomogram** if one dimension is much
+    thinner than the others, otherwise **3D map**.
+12. At most 200 sections of at least 2048 pixels → **movie**.
+13. Anything else → **image stack**.
 
 A paired `.mdoc` can then refine the result: it turns a stack with a tilt
 range into a tilt series, a stack with piece coordinates into a montage, and a
 file listed as a `SubFramePath` into a movie.
 
-Rule 5 comes before rule 6, so a tomogram named like `TS_01_rec.mrc` is shown
-as a tilt series. See
-[Troubleshooting](TROUBLESHOOTING.md#known-limitations-in-010).
+Rule 6 comes before rule 7 because a tomogram usually inherits `TS` or `tilt`
+from the name of its tilt series. A stack with no angles, no telling
+extension and only `ts` in its name, such as `TS_01.mrc`, is taken for a tilt
+series.
 
 ## Not supported yet
 

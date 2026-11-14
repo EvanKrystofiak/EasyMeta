@@ -119,7 +119,8 @@
     const src = el('div', { class: 'sourceLine dim' }, 'Read from: ' + (ds.sources.join(', ') || ds.format.name));
     if (ds.companions.length) src.appendChild(el('span', null, ' · companion files: ' + ds.companions.map((c) => `${c.name}${c.relation ? ' (' + c.relation + ')' : ''}`).join(', ')));
     root.appendChild(src);
-    if (ds.modality === 'unknown' || ds.format.id === 'tiff' || ds.modalityOverride) root.appendChild(modalitySwitch(ds, app));
+    // a plain TIFF does not say what made it: its modality is a guess, which the user can change
+    if (ds.modality === 'unknown' || ds.modalityGuessed || ds.modalityOverride) root.appendChild(modalitySwitch(ds, app));
     // checks summary
     const important = (ds.checks || []).filter((c) => c.level !== 'ok');
     const oks = (ds.checks || []).filter((c) => c.level === 'ok');

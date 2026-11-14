@@ -294,8 +294,23 @@
       if (et) lm.channels.forEach((c) => { c.exposure = c.exposure || et * ({ ms: 1e-3, s: 1, 'µs': 1e-6 }[plane0.getAttribute('ExposureTimeUnit') || 's'] || 1); });
     }
     const modes = lm.channels.map((c) => c.mode).filter(Boolean);
-    if (modes.length) lm.mode = M.mostCommon(modes);
+    if (modes.length) lm.mode = omeMode(M.mostCommon(modes));
     M.setStackKind(ds);
+  }
+
+  // OME's AcquisitionMode values in words, as the other readers name the modes
+  const OME_MODES = {
+    widefield: 'Widefield', laserscanningconfocalmicroscopy: 'Confocal (laser scanning)', spinningdiskconfocal: 'Spinning-disk confocal',
+    slitscanconfocal: 'Slit-scan confocal', sweptfieldconfocal: 'Swept-field confocal', multiphotonmicroscopy: 'Multiphoton',
+    structuredillumination: 'Structured illumination', singlemoleculeimaging: 'Single-molecule imaging',
+    totalinternalreflection: 'TIRF', fluorescencelifetime: 'Fluorescence lifetime', spectralimaging: 'Spectral imaging',
+    fluorescencecorrelationspectroscopy: 'Fluorescence correlation spectroscopy', nearfieldscanningopticalmicroscopy: 'Near-field scanning optical',
+    secondharmonicgenerationimaging: 'Second-harmonic generation', brightfield: 'Brightfield', spim: 'Light sheet (SPIM)',
+  };
+  /** "LaserScanningConfocalMicroscopy" -> "Confocal (laser scanning)"; an unknown value is split into words. */
+  function omeMode(m) {
+    const k = String(m || '').toLowerCase();
+    return OME_MODES[k] || M.words(m);
   }
 
   M.registerTiffFlavor({

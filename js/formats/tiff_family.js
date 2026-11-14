@@ -370,9 +370,12 @@
       const hay = `${info} ${ds.file.name}`;
       if (/Microscope Info|SerialEM|mdoc|Voltage|kV\b|Tecnai|Krios|Titan|Glacios|cryo|tomo|_rec\b|rec-|\.mrc|\.dm[34]|tilt/i.test(hay)) ds.modality = 'EM';
       else if (/\.czi|\.nd2|\.lif|\.lsm|confocal|Airyscan|objective|DAPI|GFP|Alexa|mCherry|laser|Excitation|Emission/i.test(hay)) ds.modality = 'LM';
+      ds.modalityGuessed = ds.modality !== 'unknown'; // from words in the info block or the name; the Overview page offers a switch
       if (info) ds.rawText['ImageJ Info.txt'] = info;
       setStackKind(ds);
-      if (ds.modality === 'EM' && ds.dims.z > 1 && /rec|tomo/i.test(ds.file.name)) ds.kind = 'tomogram';
+      // a stack named like a reconstruction is a tomogram, but only as electron microscopy
+      if (ds.dims.z > 1 && /rec|tomo/i.test(ds.file.name)) ds._kindFor = { LM: ds.kind, EM: 'tomogram' };
+      if (ds._kindFor && ds.modality === 'EM') ds.kind = 'tomogram';
       if (ds.modality === 'unknown') M.note(ds, 'info', 'Plain ImageJ TIFF: EasyMeta cannot tell whether this is light or electron microscopy; use the Light/EM switch on the Overview page.');
     },
   });

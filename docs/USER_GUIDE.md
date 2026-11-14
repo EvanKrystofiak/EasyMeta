@@ -136,8 +136,9 @@ The Overview is the first page for every file.
 - **Read from.** The metadata sources used (for example `MRC header, FEI2
   extended header, mdoc`) and the companion files.
 - **Checks.** Up to five checks that need a look, with a link to the full list.
-- **Light / electron switch.** Shown for a plain TIFF when EasyMeta cannot tell
-  what it is. Pick one and the pages change to match.
+- **Light / electron switch.** Shown for ImageJ and plain TIFF files, which do
+  not say what made them. EasyMeta guesses where it finds a clue; pick the
+  other kind if the guess is wrong, and the pages change to match.
 
 Key facts for **light microscopy**: microscope and software, objective (name,
 magnification, NA, immersion), pixel size with the Z step and whether it meets
@@ -458,5 +459,5 @@ paper. [Reports and exports](EXPORTS.md) describes the files in detail.
   look. They do not replace a measurement.
 - Format support varies. [Supported formats](FORMATS.md) says which formats
   were tested on real files.
-- Version 0.1.0 has a few known limitations. They are listed in
-  [Troubleshooting](TROUBLESHOOTING.md#known-limitations-in-010).
+- A few known limitations are listed in
+  [Troubleshooting](TROUBLESHOOTING.md#known-limitations).

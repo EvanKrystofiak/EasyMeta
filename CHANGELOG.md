@@ -2,6 +2,23 @@
 
 All notable changes to EasyMeta are listed here, newest first.
 
+## Unreleased
+
+### Fixed
+
+- A tomogram whose name carries `TS` or `tilt` from its tilt series, such as
+  `TS_01_rec.mrc`, `TS_01.rec`, `TS_01_10.00Apx.mrc` or `TS_01_Vol.mrc`, was
+  shown as a tilt series. A reconstruction's extension, labels or name now
+  outrank `ts` / `tilt` in the name.
+- The light / electron switch on the Overview page was missing for an ImageJ
+  TIFF once EasyMeta had guessed its kind, so a wrong guess could not be
+  changed. The switch is now shown for every ImageJ and plain TIFF.
+- A tilt series, movie, particle stack or montage showed a physical depth
+  (number of sections × pixel size) next to its field of view.
+- An OME-TIFF showed its acquisition mode as stored, for example
+  "LaserScanningConfocalMicroscopy". It now reads "Confocal (laser scanning)",
+  in the Mode tile and in the methods paragraph.
+
 ## 0.1.0 (2026-11-13)
 
 First public release.

@@ -7,7 +7,7 @@ EasyMeta 0.1.0
 - [Companion files](#companion-files)
 - [Values that look wrong or are missing](#values-that-look-wrong-or-are-missing)
 - [Reports and exports](#reports-and-exports)
-- [Known limitations in 0.1.0](#known-limitations-in-010)
+- [Known limitations](#known-limitations)
 - [Reporting a problem](#reporting-a-problem)
 
 ## Starting
@@ -131,9 +131,19 @@ The file is shorter than its header describes. The transfer or the
 acquisition was probably cut short. Copy the file again and compare sizes.
 
 **A plain TIFF is shown as the wrong kind of microscopy.**
-ImageJ and plain TIFF files rarely say what made them. When EasyMeta finds no
-clue it shows a **Treat this file as** switch on the Overview page. See also
-[Known limitations](#known-limitations-in-010).
+ImageJ and plain TIFF files rarely say what made them, so EasyMeta guesses
+from words in the file name and the ImageJ info block. Use the **Treat this
+file as** switch on the Overview page to change it.
+
+**A tomogram is shown as a tilt series, or the other way round.**
+An MRC file with tilt angles in its header is always a tilt series. Without
+them, EasyMeta goes by the extension, the labels in the header and the file
+name. A tomogram is recognised by the extension `.rec`, by a label written by
+a reconstruction program, or by a word such as `rec`, `tomogram` or `Vol` in
+its name. A file named only `TS_01.mrc`, with no such sign, is taken for a
+tilt series. Rename it, for example to `TS_01_rec.mrc`.
+[Supported formats](FORMATS.md#how-easymeta-decides-what-an-mrc-file-is) lists
+the rules.
 
 **A Zeiss file says LSM 980 but ZEN says LSM 800, or the other way round.**
 EasyMeta names the scan head from the hardware configuration in the file.
@@ -187,19 +197,8 @@ The file is UTF-8 with a byte-order mark, which current Excel versions read
 correctly on double-click. If yours does not, use *Data → From Text/CSV* and
 choose UTF-8.
 
-## Known limitations in 0.1.0
+## Known limitations
 
-- **A tomogram with `ts` or `tilt` as a separate word in its name is shown as
-  a tilt series.** For an MRC file with no tilt angles of its own, the file
-  name is checked for `ts`, `tilt` or `tiltseries` before it is checked for
-  `rec` or `tomo`. So `TS_01_rec.mrc` is called a tilt series and gets no
-  Volume page. The extension `.rec` does not help, because the name is
-  checked first. *Workaround:* rename the file so that it has no separate
-  `ts` or `tilt`, for example `Position01_rec.mrc`.
-- **A wrong light / electron guess for an ImageJ TIFF cannot be changed.** The
-  switch on the Overview page appears only when EasyMeta finds no clue at
-  all. If it guesses from a word in the file name, such as `tomo` or `GFP`,
-  and guesses wrong, no switch is shown. *Workaround:* rename the file.
 - **Formats marked untested** in [Supported formats](FORMATS.md) were written
   from format descriptions and may misread real files: Olympus OIF, OME-TIFF
   from Bio-Formats, Zeiss SmartSEM, Thermo SEM / FIB and Fibics Atlas TIFF.

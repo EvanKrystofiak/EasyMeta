@@ -215,13 +215,20 @@
     const thin = Math.min(H.nx, H.ny, H.nz);
     const cubic = H.nx === H.ny && H.ny === H.nz;
     const isFractions = feiRecs && feiRecs[0] && feiRecs[0]['Is dose fraction'];
+    // A reconstruction says so in its extension, in its labels or in a separate word of its name
+    // (TS_01_rec.mrc, TS_01_10.00Apx.mrc from Warp, TS_01_Vol.mrc from AreTomo).  That outranks
+    // "ts" / "tilt" in the name, which a tomogram usually inherits from its tilt series.
+    const volume = cubic && H.nx <= 1024 ? 'map' : 'tomogram';
+    const recSaid = fext === 'rec' || /tilt:|tomographic|reconstruct|aretomo|warp|isonet|cryocare|denoise|trimvol|clip: rotx/i.test(recLabels) ||
+      /(^|[_.-])(rec|recon|reconstruction|tomogram|sirt|wbp|vol)([_.-]|$)|[_.-]\d+(\.\d+)?apx([_.-]|$)/.test(name);
     if (H.nz > 1 && angVals.length > 1 && angSpan > 1) kind = 'tiltseries';
     else if (pieces && H.nz > 1 && new Set(pieces.map((r) => r['Piece X'] + ',' + r['Piece Y'])).size > 1) kind = 'montage';
     else if (H.nz === 1) kind = /gain|countref|superref|norm/.test(name) ? 'gain' : 'image';
     else if (isFractions || /fraction|frames|movie|_fr\b/.test(name)) kind = 'movie';
-    else if (['st', 'ali', 'preali'].includes(fext) || /(_|\b)(ts|tilt|tiltseries)(_|\b)/.test(name)) kind = 'tiltseries';
-    else if (fext === 'rec' || /tilt:|tomographic|reconstruct|aretomo|warp|isonet|cryocare|denoise|trimvol|clip: rotx/i.test(recLabels) ||
-      /(^|_)(rec|tomo|tomogram|full_rec|sirt|wbp)|rec\./.test(name)) kind = cubic && H.nx <= 1024 ? 'map' : 'tomogram';
+    else if (['st', 'ali', 'preali'].includes(fext)) kind = 'tiltseries';
+    else if (recSaid) kind = volume;
+    else if (/(_|\b)(ts|tilt|tiltseries)(_|\b)/.test(name)) kind = 'tiltseries';
+    else if (/(^|_)(rec|tomo|tomogram|full_rec|sirt|wbp)|rec\./.test(name)) kind = volume;
     else if (fext === 'map' || (H.ispg === 1 && cubic)) kind = 'map';
     else if (fext === 'mrcs' || (H.nx === H.ny && H.nx <= 1024 && H.nz > 20)) kind = 'particles';
     else if (H.ispg === 1 || H.ispg === 401) kind = thin < Math.max(H.nx, H.ny, H.nz) / 3 ? 'tomogram' : 'map';
