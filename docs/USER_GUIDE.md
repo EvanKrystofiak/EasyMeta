@@ -1,6 +1,6 @@
 # EasyMeta user guide
 
-EasyMeta 0.1.0
+EasyMeta 0.1.1
 
 **Contents**
 

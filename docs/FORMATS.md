@@ -1,6 +1,6 @@
 # Supported formats
 
-EasyMeta 0.1.0
+EasyMeta 0.1.1
 
 EasyMeta recognises a file by its **content**, not by its extension. It reads
 the first 8 KB, asks every format reader how well the bytes match, and uses

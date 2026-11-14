@@ -1,6 +1,6 @@
 # Reports and exports
 
-EasyMeta 0.1.0
+EasyMeta 0.1.1
 
 The **Report & export** menu (top right) is active once a file is open. Every
 item acts on the file and image currently shown. Files are saved by the
@@ -56,7 +56,7 @@ for the image. Use it in scripts and notebooks.
 
 ```json
 {
-  "generator": "EasyMeta 0.1.0",
+  "generator": "EasyMeta 0.1.1",
   "generated": "2026-11-13T19:20:05.123Z",
   "dataset": { }
 }

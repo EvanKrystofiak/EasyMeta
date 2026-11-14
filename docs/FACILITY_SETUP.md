@@ -1,6 +1,6 @@
 # Facility setup
 
-EasyMeta 0.1.0
+EasyMeta 0.1.1
 
 This document is for the person who looks after shared microscope and analysis
 computers. It covers installing EasyMeta, naming your instruments, and keeping

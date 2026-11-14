@@ -1,6 +1,6 @@
 # Checks and calculations
 
-EasyMeta 0.1.0
+EasyMeta 0.1.1
 
 This document lists every value EasyMeta derives and every check it runs, with
 the formula or threshold behind it. All of them use the metadata only. No

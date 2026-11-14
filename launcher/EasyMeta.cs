@@ -12,8 +12,8 @@ using System.Windows.Forms;
 [assembly: AssemblyDescription("Opens EasyMeta, the microscopy metadata viewer, in its own browser window")]
 [assembly: AssemblyProduct("EasyMeta")]
 [assembly: AssemblyCopyright("Copyright © 2026 Evan Krystofiak")]
-[assembly: AssemblyVersion("0.1.0.0")]
-[assembly: AssemblyFileVersion("0.1.0.0")]
+[assembly: AssemblyVersion("0.1.1.0")]
+[assembly: AssemblyFileVersion("0.1.1.0")]
 
 static class Launcher
 {

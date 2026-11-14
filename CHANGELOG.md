@@ -2,7 +2,7 @@
 
 All notable changes to EasyMeta are listed here, newest first.
 
-## Unreleased
+## 0.1.1 (2026-11-13)
 
 ### Added
 

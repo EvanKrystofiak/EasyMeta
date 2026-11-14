@@ -5,7 +5,7 @@
 (function () {
   'use strict';
   const M = (window.EasyMeta = window.EasyMeta || {});
-  M.version = '0.1.0';
+  M.version = '0.1.1';
   M.copyright = 'Copyright © 2026 Evan Krystofiak';
 
   // ---------------------------------------------------------------- values

@@ -1,6 +1,6 @@
 # Troubleshooting
 
-EasyMeta 0.1.0
+EasyMeta 0.1.1
 
 - [Starting](#starting)
 - [Opening files](#opening-files)

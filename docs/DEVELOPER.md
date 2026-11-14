@@ -1,6 +1,6 @@
 # Developer guide
 
-EasyMeta 0.1.0
+EasyMeta 0.1.1
 
 - [Design in one page](#design-in-one-page)
 - [Repository layout](#repository-layout)
@@ -362,3 +362,5 @@ A dye without an FPbase spectrum can be given peak wavelengths by hand in
 3. Add an entry to `CHANGELOG.md`.
 4. Update the version line at the top of the documents in `docs/`.
 5. Commit, tag (`git tag v0.2.0`) and push the tag.
+6. Publish a GitHub release from the tag, with the changelog entry as its
+   notes.
