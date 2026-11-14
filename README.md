@@ -214,8 +214,14 @@ app reads them exactly as it reads dropped files.
 
 **Rebuilding the launcher:** run `launcher\build_launcher.bat`.
 
-## Copyright
+## License
 
-Copyright © 2026 Evan Krystofiak. The FPbase spectra in
-`js/data/spectra_fpbase.js` keep their own license (CC BY-SA 4.0, see
+EasyMeta is released under the [MIT License](LICENSE).
+Copyright © 2026 Evan Krystofiak.
+
+You may use, copy, modify and redistribute it, including in other software,
+as long as the copyright notice and the license text stay with it.
+
+The MIT License does not cover the FPbase spectra in
+`js/data/spectra_fpbase.js`. They keep their own license (CC BY-SA 4.0, see
 *Fluorophore spectra: credits and license* above).

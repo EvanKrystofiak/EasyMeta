@@ -18,9 +18,11 @@ It runs offline in a web browser and never uploads anything.
 Other files in the repository:
 
 - [`README.md`](../README.md): overview of the program.
+- [`LICENSE`](../LICENSE): the MIT License, under which EasyMeta is released.
 - [`CHANGELOG.md`](../CHANGELOG.md): what changed in each version.
 - [`SPECTRA_CREDITS.md`](../SPECTRA_CREDITS.md): source and credit for every
-  fluorophore spectrum.
+  fluorophore spectrum. The spectra data is licensed separately, under
+  CC BY-SA 4.0.
 
 The screenshots in these documents were made with synthetic demo files. The
 microscope, sample and values in them are made up.

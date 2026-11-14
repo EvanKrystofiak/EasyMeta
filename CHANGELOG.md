@@ -4,6 +4,11 @@ All notable changes to EasyMeta are listed here, newest first.
 
 ## Unreleased
 
+### Added
+
+- EasyMeta is now released under the MIT License (`LICENSE`). The FPbase
+  spectra data keeps its own license, CC BY-SA 4.0.
+
 ### Fixed
 
 - A tomogram whose name carries `TS` or `tilt` from its tilt series, such as
