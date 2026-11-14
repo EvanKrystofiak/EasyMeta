@@ -1,0 +1,8 @@
+# Keep the line endings the project ships with (LF) on every platform.
+* text=auto eol=lf
+
+# Binary files: never convert or diff as text.
+*.exe binary
+*.ico binary
+*.png binary
+*.pdf binary

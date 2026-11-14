@@ -1,0 +1,16 @@
+# Python (tools/)
+__pycache__/
+*.pyc
+
+# FPbase download folder used by tools/fetch_fpbase_spectra.py
+/spectra_download/
+
+# OS and editor clutter
+Thumbs.db
+desktop.ini
+.DS_Store
+.vscode/
+.idea/
+
+# Claude Code local settings
+.claude/

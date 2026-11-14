@@ -1,0 +1,83 @@
+requested,fpbase_owner,ex_id,ab_id,em_id,source_field,dye_manufacturer,protein_primary_reference_doi
+DAPI,DAPI,222,7754,223,,,
+Hoechst 33342,Hoechst 33342,320,,321,,ThermoFisher,
+Alexa Fluor 350,Alexa Fluor 350,274,,275,,ThermoFisher,
+Alexa Fluor 405,Alexa Fluor 405,258,,259,,ThermoFisher,
+Alexa Fluor 488,Alexa Fluor 488,204,,205,,ThermoFisher,
+Alexa Fluor 514,Alexa Fluor 514,210,,211,,ThermoFisher,
+Alexa Fluor 532,Alexa Fluor 532,316,,317,,ThermoFisher,
+Alexa Fluor 546,Alexa Fluor 546,280,,281,,ThermoFisher,
+Alexa Fluor 555,Alexa Fluor 555,266,,267,,ThermoFisher,
+Alexa Fluor 568,Alexa Fluor 568,262,,263,,ThermoFisher,
+Alexa Fluor 594,Alexa Fluor 594,272,,273,,ThermoFisher,
+Alexa Fluor 633,Alexa Fluor 633,284,,285,,ThermoFisher,
+Alexa Fluor 647,Alexa Fluor 647,306,,307,,ThermoFisher,
+Alexa Fluor 660,Alexa Fluor 660,194,,195,,ThermoFisher,
+Alexa Fluor 680,Alexa Fluor 680,302,,303,,ThermoFisher,
+Alexa Fluor 700,Alexa Fluor 700,196,,197,,ThermoFisher,
+Alexa Fluor 750,Alexa Fluor 750,278,,279,,ThermoFisher,
+FITC,Fluorescein (FITC),236,7771,237,,,
+Oregon Green 488,Oregon Green 488,282,,283,,ThermoFisher,
+Cy2,Cy2,10199,,10232,,,
+Cy3,Cy3,240,7752,241,,,
+Cy5,Cy5,250,7753,251,,,
+Cy5.5,Cy5.5,,2084,2085,,,
+Cy7,Cy7,254,,255,,ThermoFisher,
+TRITC,"Tetramethylrhodamine (TAMRA, TRITC)",208,2536,209,,,
+Texas Red,Texas Red,290,2537,291,,,
+Pacific Blue,Pacific Blue,312,,313,,ThermoFisher,
+BV421,Brilliant Violet 421,4738,,4739,BioLegend website,BioLegend,
+ATTO 488,ATTO 488,,1397,1374,,ATTO-TEC GmbH,
+ATTO 565,ATTO 565,,1370,1399,,ATTO-TEC GmbH,
+ATTO 594,ATTO 594,,1360,1389,,ATTO-TEC GmbH,
+ATTO 647N,ATTO 647N,,1412,1355,,ATTO-TEC GmbH,
+ATTO 655,ATTO 655,,1390,1361,,ATTO-TEC GmbH,
+Janelia Fluor 549,Janelia Fluor JF549-HaloTag conjugate,6386,6387,6385,Luke Lavis,,
+Janelia Fluor 646,Janelia Fluor JF646-HaloTag conjugate,6413,6414,6412,Luke Lavis,,
+SiR,SiR,,1478,1479,,Spirochrome,
+DyLight 488,DyLight 488,4601,,4602,Thermo Fisher website,ThermoFisher,
+DyLight 549,DyLight 549,4498,,4499,Thermo Fisher website,ThermoFisher,
+DyLight 594,NOT IN FPBASE,,,,,,
+DyLight 649,DyLight 649,4593,,4594,Thermo Fisher website,ThermoFisher,
+CF405M,CF405M,,2344,2345,,Biotium,
+CF568,CF568,,2370,2371,,Biotium,
+CF640R,CF640R,,2384,2385,,Biotium,
+BODIPY FL,BODIPY FL,296,,297,,ThermoFisher,
+Propidium iodide,Propidium iodide (PI),198,,199,,ThermoFisher,
+Propidium iodide (alt.),Propidium Iodide,,2521,2522,,,
+DRAQ5,DRAQ5,1432,,1433,,ThermoFisher,
+TO-PRO-3,TO-PRO-3,218,,219,,ThermoFisher,
+MitoTracker Red,MitoTracker Red,214,,215,,ThermoFisher,
+MitoTracker Red FM (alt.),MitoTracker Red FM,292,,293,,ThermoFisher,
+MitoTracker Green,MitoTracker Green FM,256,,257,,ThermoFisher,
+Nile Red,Nile Red,,2494,2495,,,
+EGFP,EGFP,17,,18,,,10.1016/0378-1119(95)00685-0
+mEmerald,mEmerald,83,,84,,,10.1016/s0091-679x(08)61946-9
+mNeonGreen,mNeonGreen,101,,102,,,10.1038/nmeth.2413
+mClover (mClover3),mClover3,81,,82,,,10.1038/srep20889
+"GCaMP6 (GCaMP6f, Ca-bound)",GCaMP6f (In presence of Ca2+),5865,,5866,,,10.1038/nature12354
+EYFP,EYFP,19,,20,,,10.1126/science.273.5280.1392
+mVenus,mVenus,1601,,1602,,,10.1021/bi0516273
+mCitrine,mCitrine,1341,,1340,,,10.1126/science.1068539
+ECFP,ECFP,15,,16,,,10.1016/s0960-9822(02)00450-5
+mCerulean,mCerulean,2062,,2063,,,10.1529/biophysj.104.055442
+mTurquoise2,mTurquoise2,6551,1745,1746,,,10.1038/ncomms1738
+EBFP2,EBFP2,13,,14,,,10.1021/bi700199g
+mTagBFP2,mTagBFP2,1338,,1339,,,10.1371/journal.pone.0028674
+mCherry,mCherry,79,,80,,,10.1038/nbt1037
+tdTomato,tdTomato,137,,138,,,10.1038/nbt1037
+DsRed,DsRed,9,,10,,,10.1038/13657
+mScarlet,mScarlet,119,,120,,,10.1038/nmeth.4074
+mKate2,mKate2,93,,94,,,10.1042/bj20081949
+mRuby,mRuby,115,,116,,,10.1371/journal.pone.0004391
+mApple,mApple,69,,70,,,10.1038/nmeth.1209
+mOrange,mOrange,77,,78,,,10.1038/nbt1037
+mStrawberry,mStrawberry,125,,126,,,10.1038/nbt1037
+mPlum,mPlum,109,,110,,,10.1073/pnas.0407752101
+Dendra2 green,Dendra2 (Green),1557,,1558,,,10.1038/nbt1191
+Dendra2 red,Dendra2 (Red),1559,,1560,,,10.1038/nbt1191
+mEos3.2 green,mEos3.2 (Green),139,,140,,,10.1038/nmeth.2021
+mEos3.2 red,mEos3.2 (Red),141,,142,,,10.1038/nmeth.2021
+iRFP670,iRFP670,55,,56,,,10.1038/nmeth.2521
+iRFP713,iRFP713,63,,64,,,10.1038/nbt.1918
+iRFP720,iRFP720,65,,66,,,10.1038/nmeth.2521

@@ -1,0 +1,92 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="author" content="Evan Krystofiak">
+<meta name="copyright" content="Copyright © 2026 Evan Krystofiak">
+<title>EasyMeta</title>
+<link rel="icon" type="image/svg+xml" href="img/easymeta.svg">
+<link rel="stylesheet" href="css/easymeta.css">
+</head>
+<body>
+<div id="app">
+  <header id="topBar">
+    <label class="barLabel">File:</label>
+    <div id="fileField" class="field">No file open</div>
+    <button id="btnOpen" title="Open one or more files (Ctrl+O)">Open files…</button>
+    <button id="btnFolder" title="Open a whole folder, e.g. a tilt-series session">Open folder…</button>
+    <div class="menuWrap">
+      <button id="btnReport" class="primary bigAction" disabled>Report &amp; export ▾</button>
+      <div id="reportMenu" class="menu">
+        <button data-action="print">Print / save as PDF</button>
+        <button data-action="html">Save report (.html)</button>
+        <button data-action="json">Export all metadata (.json)</button>
+        <button data-action="csv">Export summary (.csv)</button>
+        <button data-action="methods">Copy methods paragraph</button>
+      </div>
+    </div>
+  </header>
+
+  <nav id="navBar">
+    <div class="brand">
+      <div class="name"><img src="img/easymeta.svg" alt="" class="logo">EasyMeta</div>
+      <div class="sub">microscopy metadata viewer</div>
+    </div>
+    <div id="navButtons"></div>
+    <section id="filesCard" class="card">
+      <div class="filesHead"><h3>Files</h3><button id="btnClear" class="small" title="Close all files">Clear</button></div>
+      <div id="filesCount" class="dim">none open</div>
+      <input id="fileFilter" type="search" placeholder="Filter…" style="display:none">
+      <div id="filesList"></div>
+    </section>
+  </nav>
+
+  <main id="page"></main>
+
+  <footer id="statusBar"><span id="statusLeft">Ready</span><span id="statusRight"></span></footer>
+</div>
+
+<input type="file" id="fileInput" multiple hidden>
+<input type="file" id="folderInput" webkitdirectory multiple hidden>
+<div id="dropOverlay"><div>Drop files or folders to open them</div></div>
+
+<!-- core -->
+<script src="js/core/util.js"></script>
+<script src="js/core/source.js"></script>
+<script src="js/core/text.js"></script>
+<script src="js/core/registry.js"></script>
+<script src="js/core/tiff.js"></script>
+<script src="js/core/image.js"></script>
+<script src="js/core/ole.js"></script>
+<script src="js/core/hdf5.js"></script>
+<!-- editable facility settings -->
+<script src="config/instruments.js"></script>
+<!-- formats: electron microscopy -->
+<script src="js/formats/mrc.js"></script>
+<script src="js/formats/mdoc.js"></script>
+<script src="js/formats/epu.js"></script>
+<script src="js/formats/dm.js"></script>
+<script src="js/formats/tiff_family.js"></script>
+<!-- formats: light microscopy -->
+<script src="js/formats/tiff_lm.js"></script>
+<script src="js/formats/czi.js"></script>
+<script src="js/formats/nd2.js"></script>
+<script src="js/formats/lif.js"></script>
+<script src="js/formats/olympus.js"></script>
+<script src="js/formats/ims.js"></script>
+<!-- analysis (spectra_fpbase.js: measured dye spectra from FPbase, CC BY-SA 4.0, see SPECTRA_CREDITS.md) -->
+<script src="js/data/spectra_fpbase.js"></script>
+<script src="js/analysis/dyes.js"></script>
+<script src="js/analysis/spectra.js"></script>
+<script src="js/analysis/analyze.js"></script>
+<script src="js/analysis/checks.js"></script>
+<script src="js/analysis/methods.js"></script>
+<!-- views -->
+<script src="js/views/graphics.js"></script>
+<script src="js/views/rawtree.js"></script>
+<script src="js/views/pages.js"></script>
+<script src="js/views/report.js"></script>
+<script src="js/app.js"></script>
+</body>
+</html>
