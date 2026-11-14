@@ -25,6 +25,23 @@ only the header and metadata blocks it needs: usually a few KB, even from
 multi-GB files. A small preview reads one plane at most. **Files never leave
 the computer.**
 
+![EasyMeta showing the Tilt series page](docs/img/em-tilt.png)
+
+## Documentation
+
+| Document | Contents |
+|---|---|
+| [Quick start](docs/QUICK_START.md) | Open your first file in two minutes. |
+| [User guide](docs/USER_GUIDE.md) | Every page, graphic and button, with screenshots. |
+| [Supported formats](docs/FORMATS.md) | What is read from each format; how companion files are paired. |
+| [Checks and calculations](docs/CHECKS.md) | The rule and threshold behind every check and estimate. |
+| [Reports and exports](docs/EXPORTS.md) | The report, and the JSON and CSV exports. |
+| [Facility setup](docs/FACILITY_SETUP.md) | Installing on shared computers and naming your instruments. |
+| [Troubleshooting](docs/TROUBLESHOOTING.md) | Common problems and known limitations. |
+| [Developer guide](docs/DEVELOPER.md) | Adding a format, a check or a graphic. |
+
+See [`CHANGELOG.md`](CHANGELOG.md) for the version history.
+
 ## Starting EasyMeta
 
 | System | How |
@@ -175,6 +192,7 @@ tools/devserver.py     development server for automated testing (not needed to u
 tools/make_icon.py     packs the PNG renders of img/easymeta.svg into the .ico
 tools/fetch_fpbase_spectra.py, build_spectra.py, fpbase_spectrum_ids.csv
                        one-time download + packing of the FPbase spectra
+docs/                  user guide and reference documents (start at docs/README.md)
 ```
 
 **Adding a format:** create `js/formats/<name>.js` and add a `<script>` tag

@@ -1,0 +1,39 @@
+# Changelog
+
+All notable changes to EasyMeta are listed here, newest first.
+
+## 0.1.0 (2026-11-13)
+
+First public release.
+
+### Program
+
+- Runs offline in a web browser, with nothing to install. Reads only the
+  header and metadata blocks it needs.
+- Opens files and folders by drag and drop, **Open files…** and
+  **Open folder…**.
+- Works out whether a file is light or electron microscopy and shows the
+  pages that fit: Overview, Optics & channels, Stack, Beam & camera, Tilt
+  series, Volume, Frames, Montage, Checks & methods and Raw metadata.
+- Light microscopy formats: Zeiss CZI and LSM, Nikon ND2, Leica LIF, Olympus
+  OIB and OIF, Imaris IMS, OME-TIFF, ImageJ TIFF.
+- Electron microscopy formats: MRC with Thermo FEI1 / FEI2, SerialEM and
+  Agard extended headers, EER, Gatan DM3 and DM4, AMT camera TIFF, Zeiss
+  SmartSEM TIFF, Thermo SEM / FIB TIFF, Fibics Atlas TIFF.
+- Companion files paired automatically: SerialEM / Tomography `.mdoc`, EPU /
+  Tomo `.xml`, IMOD `.tlt`, `.rawtlt` and `tilt.com`.
+- Wavelength map with measured FPbase spectra for 80 dyes and fluorescent
+  proteins.
+- Tilt scheme detection (dose-symmetric, bidirectional, unidirectional) with
+  graphics for tilt angles, acquisition order and accumulated dose.
+- Checks on sampling, spectra, tilt series, dose, detector and file integrity.
+- Machine-generated methods paragraph.
+- Printable report, standalone HTML report, JSON and CSV export.
+- Facility instrument names in `config/instruments.js`.
+- Windows launcher `EasyMeta.exe`.
+
+### Documentation
+
+- Added `docs/`: quick start, user guide, supported formats, checks and
+  calculations, reports and exports, facility setup, troubleshooting and
+  developer guide.
